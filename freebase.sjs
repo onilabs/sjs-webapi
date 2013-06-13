@@ -1,10 +1,6 @@
 /*
- * Oni Apollo 'webapi/freebase' module
+ * 'freebase' module
  * Bindings to the Freebase API
- *
- * Part of the Oni Apollo Standard Module Library
- * Version: 'unstable'
- * http://onilabs.com/apollo
  *
  * (c) 2011 Oni Labs, http://onilabs.com
  *
@@ -30,11 +26,11 @@
  *
  */
 /**
-  @module    webapi/freebase
+  @module    freebase
   @summary   Bindings to the [Freebase](http://freebase.com) API
-  @home      sjs:webapi/freebase
+  @home      github:onilabs/sjs-webapi/master/freebase
 */
-var http = require("../http");
+var http = require("sjs:http");
 var sys = require("builtin:apollo-sys");
 
 var api_base = "http://api.freebase.com/api/service/"; // XXX do we want https?

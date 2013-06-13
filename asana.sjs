@@ -1,10 +1,6 @@
 /*
- * Oni Apollo 'webapi/asana' module
+ * 'asana' module
  * Bindings to the Asana API
- *
- * Part of the Oni Apollo Standard Module Library
- * Version: 'unstable'
- * http://onilabs.com/apollo
  *
  * (c) 2012 Oni Labs, http://onilabs.com
  *
@@ -30,9 +26,9 @@
  *
  */
 /**
-  @module    webapi/asana
+  @module    asana
   @summary   Bindings to the [Asana](http://asana.com) API
-  @home      sjs:webapi/asana
+  @home      github:onilabs/sjs-webapi/master/asana
   @hostenv   nodejs
   @desc
     For more information about the Asana API, see http://developer.asana.com/documentation/
@@ -43,9 +39,8 @@
      the xbrowser host environment (yet).
 */
 
-var http   = require("../http");
-var sys    = require("builtin:apollo-sys"); 
-var { merge } = require("../object");
+var http   = require("sjs:http");
+var { merge } = require("sjs:object");
 
 /**
    @class    Client

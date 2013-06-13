@@ -1,10 +1,6 @@
 /*
- * Oni Apollo 'webapi/yql' module
+ * 'yql' module
  * Stratified wrapper for the YQL web service 
- *
- * Part of the Oni Apollo Standard Module Library
- * Version: 'unstable'
- * http://onilabs.com/apollo
  *
  * (c) 2010-2011 Oni Labs, http://onilabs.com
  *
@@ -30,10 +26,10 @@
  *
  */
 /**
-  @module    webapi/yql
+  @module    yql
   @summary   A stratified wrapper for the [Yahoo! Query Language](http://developer.yahoo.com/yql/) (YQL) Web Service, 
              which enables you to access Internet data with SQL-like commands.
-  @home      sjs:webapi/yql
+  @home      github:onilabs/sjs-webapi/master/yql
   @desc
     
         var yql = require("sjs:webapi/yql");
@@ -43,7 +39,7 @@
     See the [::query] function for more examples.
 */
 
-var http = require("../http");
+var http = require("sjs:http");
 
 /**
   @function  query
@@ -148,7 +144,7 @@ exports.getDataURI = function(url) {
   @return    {String}
 */
 exports.getFile = function(url) {
-  var str = require("../string");
+  var str = require("sjs:string");
   return str.utf8ToUtf16(str.base64ToOctets(exports.getDataURI(url).split("base64,")[1]));
 };
 

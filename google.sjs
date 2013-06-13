@@ -1,10 +1,6 @@
 /*
- * Oni Apollo 'webapi/google' module
+ * 'google' module
  * Bindings to various Google webservices and APIs
- *
- * Part of the Oni Apollo Standard Module Library
- * Version: 'unstable'
- * http://onilabs.com/apollo
  *
  * (c) 2010-2011 Oni Labs, http://onilabs.com
  *
@@ -30,11 +26,11 @@
  *
  */
 /**
-  @module    webapi/google
+  @module    google
   @summary   Bindings to various Google webservices and APIs 
-  @home      sjs:webapi/google
+  @home      github:onilabs/sjs-webapi/master/google
 */
-var http = require("../http");
+var http = require("sjs:http");
 
 /**
   @function  search
@@ -180,7 +176,7 @@ exports.speak = speak;
 // helper to check if google api is installed
 function ensureAPI() {
   if (window["google"] && window.google.load) return;
-  require('../xbrowser/dom').script("http://www.google.com/jsapi");
+  require('sjs:xbrowser/dom').script("http://www.google.com/jsapi");
 }
 
 /**

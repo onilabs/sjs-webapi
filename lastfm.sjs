@@ -1,10 +1,6 @@
 /*
- * Oni Apollo 'webapi/lastfm' module
+ * 'lastfm' module
  * Bindings to the lastfm API 
- *
- * Part of the Oni Apollo Standard Module Library
- * Version: 'unstable'
- * http://onilabs.com/apollo
  *
  * (c) 2010-2011 Oni Labs, http://onilabs.com
  *
@@ -31,9 +27,9 @@
  */
 
  /**
-   @module  webapi/lastfm
+   @module  lastfm
    @summary A wrapper around the Last.fm API
-   @home    sjs:webapi/lastfm
+   @home    github:onilabs/sjs-webapi/master/lastfm
    @desc
      This module uses the JSONP interface of [the Last.fm API](http://www.last.fm/api).
 
@@ -48,7 +44,7 @@
          }
     
 */
-var http = require("../http");
+var http = require("sjs:http");
 var defaultKey = "b25b959554ed76058ac220b7b2e0a026";
 
 /**

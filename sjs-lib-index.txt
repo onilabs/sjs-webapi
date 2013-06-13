@@ -1,0 +1,8 @@
+@lib     SJS Web API Modules
+@summary Bindings to popular web apis
+
+@module asana
+@module freebase
+@module google
+@module lastfm
+@module yql

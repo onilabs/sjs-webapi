@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>sjs-webapi tests</title>
+    <script src="/__oni/sjs/stratified.js"></script>
+    <script type="text/sjs">
+      require('sjs:test/runner').run({
+        modules: [
+          'google-tests.sjs',
+          'yql-tests.sjs',
+        ],
+        base: module.id,
+      });
+    </script>
+  </head>
+</html>

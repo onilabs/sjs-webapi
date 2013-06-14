@@ -1,34 +1,33 @@
-var testUtil = require('../lib/testUtil');
-var testEq = testUtil.test;
 var {test, assert, context} = require('sjs:test/suite');
-var g = require('sjs:webapi/google');
+var g = require('../google');
 var logging = require('sjs:logging');
 
 context {||
-  testEq('search', true, function() {
+  test('search') {||
     var results = g.search("croczilla");
-    return results.responseData.results[0].url != null;
-  });
+    results.responseData.results[0].url .. assert.ok();
+  }
 
-  testEq('search(., {start:4})', true, function() {
+  test('search(., {start:4})') {||
     var results = g.search("croczilla", {start:4});
-    return results.responseData.results[0].url != null;
-  });
+    results.responseData.results[0].url .. assert.ok();
+  }
 
-  testEq('siteSearch(., {start:4})', true, function() {
+  test('siteSearch(., {start:4})') {||
     var results = g.siteSearch("news", "http://cnn.com", {start:4});
     logging.info(results);
-    return results.responseData.results[0].url != null;
-  });
+    results.responseData.results[0].url .. assert.ok();
+  }
 
-  testEq('translate', "Hallo", function() {
+  test('translate') {||
     var response = g.translate("hello", "de");
     if (!response.responseData) return response.responseDetails;
-    return response.responseData.translatedText;
-  }).skip("translate is now a paid api");
+    response.responseData.translatedText .. assert.eq("Hallo");
+  }.skip("translate is now a paid api");
 
-  testEq('BROKEN: load', true, function() {
+  test('BROKEN: load') {||
     g.load("language", "1");
-    return google.language.isFontRenderingSupported("hi");
-  }).skip();
-}.browserOnly().ignoreLeaks('_oni_jsonpcb');
+    google.language.isFontRenderingSupported("hi") .. assert.ok();
+  }.skip();
+
+}.ignoreLeaks('_oni_jsonpcb');
